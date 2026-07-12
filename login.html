@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaintainIQ | Sign In</title>
+    <style>
+        
+        :root {
+            --primary-dark: #0f344d;
+            --primary-teal: #1a6b7d;
+            --bg-light: #f5f7fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --border-color: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow: hidden;
+        }
+
+        
+        .login-left {
+            flex: 1;
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-box {
+            background-color: #4fd1c5;
+            color: var(--primary-dark);
+            font-weight: bold;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+
+        .login-left h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+        .login-left p.lead { font-size: 1.1rem; color: #cbd5e0; max-width: 400px; line-height: 1.5; }
+
+        /* Floating Feature Boxes */
+        .feature-grid {
+            position: absolute;
+            right: 0px;
+            top: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            opacity: 0.9;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.2rem;
+            border-radius: 12px;
+            width: 260px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .feature-box h4 { margin-bottom: 0.5rem; color: #4fd1c5; }
+        .feature-box p { font-size: 0.85rem; color: #e2e8f0; line-height: 1.4; }
+
+        /* Right Side: Form Container */
+        .login-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .campus-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
+        .login-card p.sub { color: var(--text-light); margin-bottom: 2rem; font-size: 0.9rem; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .form-group input[type="email"], .form-group input[type="password"] {
+            width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color);
+            border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s;
+        }
+        .form-group input:focus { border-color: var(--primary-teal); }
+
+        .checkbox-group { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 1.5rem; }
+
+        .btn-login {
+            width: 100%; padding: 1rem; background-color: var(--primary-teal); color: white;
+            border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: background-color 0.2s;
+        }
+        .btn-login:hover { background-color: var(--primary-dark); }
+
+        /* Demo Helpers */
+        .demo-helpers { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+        .demo-account {
+            background-color: var(--bg-light); border: 1px solid var(--border-color);
+            padding: 1rem; border-radius: 8px; font-size: 0.85rem; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .demo-role { font-weight: 700; color: var(--primary-dark); margin-bottom: 0.2rem; }
+        .demo-creds { color: var(--text-light); }
+        .use-demo-btn {
+            background: none; border: none; color: var(--primary-teal);
+            font-weight: 600; cursor: pointer; padding: 0.5rem;
+        }
+        .use-demo-btn:hover { text-decoration: underline; }
+
+        /* Mobile Response */
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+            .login-left { display: none; }
+            .login-right { padding: 2rem; background-color: var(--primary-dark); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-left">
+        <div class="brand-logo">
+            <div class="logo-box">AC</div>
+            <h2 style="font-size: 1.8rem; margin:0;">AssetCare / MaintainIQ</h2>
+        </div>
+          
+        <h1>Scan.<br>Report.<br>Maintain.</h1>
+        <p class="lead">Every physical asset deserves a complete digital maintenance history. Move from QR access to issue reporting, technician execution, and immutable service records in one workflow.</p>
+
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h4>QR asset access</h4>
+                <p>Public, mobile-first pages for reporting issues in seconds.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Operational visibility</h4>
+                <p>Track issue priority, technician load, maintenance schedules, and evidence.</p>
+            </div>
+            <div class="feature-box" style="margin-left: 20px;">
+                <h4>Maintenance history</h4>
+                <p>Keep a full timeline of inspections, repairs, and service recommendations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-right">
+        <div class="login-card">
+            <div class="campus-tag">SMIT Technology Campus</div>
+            <h2>Sign in to your workspace</h2>
+            <p class="sub">Use the demo accounts below to experience the admin and technician flows.</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" required placeholder="name@domain.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="passwordInput" required placeholder="••••••••">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me on this device</label>
+                </div>
+                
+                <button type="submit" class="btn-login">Login to Workspace</button>
+            </form>
+
+            <div class="demo-helpers">
+                <div class="demo-account" style="border-left: 4px solid #3182ce;">
+                    <div>
+                        <div class="demo-role">Administrator</div>
+                        <div class="demo-creds">admin@assetcare.demo • admin123</div>
+                    </div>
+                    <button type="button" class="use-demo-btn" onclick="fillDemo('admin@assetcare.demo', 'admin123', 'admin')">Use admin</button>
+                </div>
+                
+                <div class="demo-account" style="border-left: 4px solid #d69e2e;">
+                    <div>
+                        <div class="demo-role">Technician</div>
+                        <div class="demo-creds">technician@assetcare.demo • tech123</div>
+                    </div>
+                    <button type="button" class="use-demo-btn" onclick="fillDemo('technician@assetcare.demo', 'tech123', 'technician')">Use tech</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Auto-fill logic for the demo buttons
+        function fillDemo(email, password, role) {
+            document.getElementById('emailInput').value = email;
+            document.getElementById('passwordInput').value = password;
+            // Store intended role temporarily in the DOM form dataset
+            document.getElementById('loginForm').dataset.role = role;
+        }
+
+        // 2. Intercept Login and Redirect
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page from refreshing
+            
+            const email = document.getElementById('emailInput').value;
+            const role = this.dataset.role || 'admin'; // Default to admin if they typed it manually
+            
+            // Save mock authentication state to LocalStorage
+            const sessionData = {
+                isAuthenticated: true,
+                userEmail: email,
+                userRole: role,
+                loginTime: new Date().toISOString()
+            };
+            
+            localStorage.setItem('maintainIQ_session', JSON.stringify(sessionData));
+            
+            // Redirect to the main application
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

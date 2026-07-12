@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaintainIQ | Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">MIQ</div>
+            <div>
+                <h1>MaintainIQ</h1>
+                <p>Scan. Report. Maintain.</p>
+            </div>
+        </div>
+
+        <div class="campus-card">
+            <strong>SMIT Technology Campus</strong>
+            <p>Every asset deserves a complete digital maintenance history.</p>
+        </div>
+
+        <nav class="side-nav">
+            <a href="#dashboard" class="nav-item active" data-view="dashboard">Dashboard</a>
+            <a href="#assets" class="nav-item" data-view="assets">Assets</a>
+            <a href="#issues" class="nav-item" data-view="issues">Issues</a>
+            <a href="#schedules" class="nav-item" data-view="schedules">Scheduled Maintenance</a>
+            <a href="#technicians" class="nav-item" data-view="technicians">Technicians</a>
+            <a href="#analytics" class="nav-item" data-view="analytics">Analytics</a>
+        </nav>
+        
+        <div class="bottom-actions">
+            <button id="resetDataBtn" class="reset-btn">Reset Demo Data</button>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="topbar">
+            <div class="search-bar">
+                <input type="text" id="globalSearch" placeholder="Search assets, codes, or issues... (Press Enter)">
+            </div>
+            <div class="user-menu">
+                <span class="notification-bell">🔔</span>
+                <div class="admin-badge">
+                    <strong id="topbarUserName">Ayesha Siddiqui</strong>
+                    <span id="topbarUserRole">admin@assetcare.demo • admin</span>
+                </div>
+                <button class="btn-primary" id="userMenuBtn">Admin Menu</button>
+                
+                <div class="admin-dropdown" id="userMenuDropdown">
+                    <h3 style="margin-bottom: 0.5rem; color: var(--primary-dark);">User Menu</h3>
+                    <p>Use reset to restore the original sample data in localStorage, including demo issues, schedules, notifications, and history entries.</p>
+                    <div class="admin-dropdown-actions">
+                        <button id="menuResetBtn" style="background: rgba(229, 62, 62, 0.1); color: #e53e3e; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Reset Demo Data</button>
+                        <button id="menuLogoutBtn" style="background: white; border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="app-container">
+            </main>
+    </div>
+
+    <script src="StorageService.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
